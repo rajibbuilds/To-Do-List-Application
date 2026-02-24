@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #232323);
+    min-height: 100vh;
+    color: white;
+}
+
+.maindiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 40px;
+}
+
+.quoteBox {
+    width: 90%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 20px 25px;
+    border-radius: 18px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    color: #eaeaea;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+
+.quoteText {
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.sidediv {
+    width: 90%;
+    max-width: 850px;
+    background: rgba(255,255,255,0.06);
+    padding: 18px;
+    display: flex;
+    gap: 12px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.45);
+}
+
+#inputtag {
+    height: 40px;
+    flex: 1;
+    padding: 10px;
+    border: 1.5px solid #555;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    background: #111;
+    color: white;
+}
+
+#inputtag:focus {
+    border-color: #8b72ff;
+}
+
+.submitbtn {
+    padding: 10px 20px;
+    background-color: #8b72ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.25s;
+}
+
+.submitbtn:hover {
+    background-color: #7c63f7;
+}
+
+.taskdiv {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tododiv,
+.pendingdiv,
+.completeddiv {
+    width: 30%;
+    min-width: 280px;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.45);
+}
+
+.tododiv::before,
+.pendingdiv::before,
+.completeddiv::before {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fafafa;
+}
+
+.tododiv::before { content: "To-Do"; }
+.pendingdiv::before { content: "Pending"; }
+.completeddiv::before { content: "Completed"; }
+
+.taskdivtodo,
+.taskdivpending,
+.taskdivcomplete {
+    background: rgba(255,255,255,0.08);
+    padding: 14px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.taskh1 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e6e6e6;
+    flex: 1;
+}
+
+.iconbtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.deletebtn {
+    background-color: #ff4c4c;
+    color: white;
+}
+
+.deletebtn:hover {
+    background-color: #ff2b2b;
+}
+
+.updatebtn {
+    background-color: #4aa8ff;
+    color: white;
+}
+
+.updatebtn:hover {
+    background-color: #1c96ff;
+}
+
+@media (max-width: 900px) {
+    .taskdiv {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tododiv,
+    .pendingdiv,
+    .completeddiv {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidediv {
+        flex-direction: column;
+    }
+
+    #inputtag {
+        width: 100%;
+    }
+
+    .submitbtn {
+        width: 100%;
+        padding: 12px;
+    }
+}
