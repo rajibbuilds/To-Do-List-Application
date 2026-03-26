@@ -12,22 +12,21 @@ quoteBox.appendChild(quoteText);
 maindiv.insertBefore(quoteBox, maindiv.firstChild);
 
 function loadQuote() {
-    fetch("https://api.api-ninjas.com/v2/quotes", {
-        headers: {
-            "X-Api-Key": "GcuI1HvyM4R82G1ySH83QA==J3oru6wXJcAjTNuW"
-        }
-    })
+    fetch("https://dummyjson.com/quotes")
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            quoteText.textContent = `"${data[0].quote}" — ${data[0].author}`;
+
+            let randomIndex = Math.floor(Math.random() * data.quotes.length);
+            let quote = data.quotes[randomIndex];
+
+            quoteText.textContent = `"${quote.quote}" — ${quote.author}`;
         })
         .catch(err => {
             console.error(err);
             quoteText.textContent = "Stay positive. Work hard. Make it happen.";
         });
 }
-
 loadQuote();
 setInterval(loadQuote, 10000);
 
@@ -76,7 +75,7 @@ submitbtn.addEventListener("click", function () {
 
     deletebtnn.addEventListener("click", function () {
         taskdivtodo.remove();
-        
+
     })
 
     updatebtn.addEventListener("click", function () {
